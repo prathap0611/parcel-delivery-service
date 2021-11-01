@@ -33,13 +33,15 @@ services:
     image: parcel-service
     build:
       context: .
-      dockerfile: ./services/parcel-service/Dockerfile
+      dockerfile: ./services/parcel-service/Dockerfile.debug
     depends_on:
       - "db"
     environment:
       NODE_ENV: development
     ports:
       - 8081:8081
+      - 9230:9230
     environment:
       PORT: "8081"
       DATABASE_URL: "postgresql://postgres:password@host.docker.internal:54321/postgres"
+      USER_AUTH_SECRET: "rJ0x7OzQ*8br"

@@ -12,9 +12,19 @@
             "address": "localhost",
             "remoteRoot": "/usr/src/app",
             "sourceMapPathOverrides": {
-              "/usr/src/app/*": "${workspaceRoot}/*"
+                "/usr/src/app/*": "${workspaceRoot}/*"
             }
-          }
-
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Docker: Attach to Parcel Service",
+            "port": 9230,
+            "address": "localhost",
+            "remoteRoot": "/usr/src/app",
+            "sourceMapPathOverrides": {
+                "/usr/src/app/*": "${workspaceRoot}/*"
+            }
+        }
     ]
 }

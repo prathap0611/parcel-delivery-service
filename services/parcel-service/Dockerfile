@@ -6,6 +6,7 @@ WORKDIR $INSTALL_PATH
 
 COPY tsconfig.json .
 COPY package* .
+COPY prisma ./prisma/
 
 RUN mkdir -p $INSTALL_PATH/services/parcel-service
 COPY ./services/parcel-service ./services/parcel-service
