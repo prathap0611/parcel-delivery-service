@@ -17,16 +17,18 @@ services:
     image: authentication-service
     build:
       context: .
-      dockerfile: ./services/authentication-service/Dockerfile
+      dockerfile: ./services/authentication-service/Dockerfile.debug
     depends_on:
       - "db"
     environment:
       NODE_ENV: development
     ports:
       - 8080:8080
+      - '9229:9229'
     environment:
       PORT: "8080"
       DATABASE_URL: "postgresql://postgres:password@host.docker.internal:54321/postgres"
+      USER_AUTH_SECRET: "rJ0x7OzQ*8br"
   parcel-service:
     image: parcel-service
     build:

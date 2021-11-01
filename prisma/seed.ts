@@ -1,11 +1,14 @@
 import { PrismaClient } from '@prisma/client';
+import { genSalt, hash } from 'bcrypt';
 import senderData from './seed-data/senders.json';
 import bikerData from './seed-data/bikers.json';
 const prisma = new PrismaClient();
 
 async function seedSenders() {
     await Promise.all(
-        senderData.map(({ email, name, mobile, password }) => {
+        senderData.map(async ({ email, name, mobile, password }) => {
+            const salt = await genSalt();
+            const hashedPassword = await hash(password, salt);
             return prisma.senders.upsert({
                 where: { email: email },
                 update: {},
@@ -13,8 +16,8 @@ async function seedSenders() {
                     name,
                     email,
                     mobile,
-                    password,
-                    salt: 'temp',
+                    password: hashedPassword,
+                    salt,
                 },
             });
         })
@@ -23,7 +26,9 @@ async function seedSenders() {
 
 async function seedBikers() {
     await Promise.all(
-        bikerData.map(({ email, name, mobile, password }) => {
+        bikerData.map(async ({ email, name, mobile, password }) => {
+            const salt = await genSalt();
+            const hashedPassword = await hash(password, salt);
             return prisma.bikers.upsert({
                 where: { email: email },
                 update: {},
@@ -31,8 +36,8 @@ async function seedBikers() {
                     name,
                     email,
                     mobile,
-                    password,
-                    salt: 'temp',
+                    password: hashedPassword,
+                    salt,
                 },
             });
         })

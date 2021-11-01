@@ -6,6 +6,7 @@ WORKDIR $INSTALL_PATH
 
 COPY tsconfig.json .
 COPY package* .
+COPY prisma ./prisma/
 
 RUN mkdir -p $INSTALL_PATH/services/authentication-service
 COPY ./services/authentication-service ./services/authentication-service
@@ -27,4 +28,4 @@ COPY --from=build-stage $INSTALL_PATH/services/authentication-service/dist $INST
 
 WORKDIR $INSTALL_PATH/authentication-service
 EXPOSE 8080
-ENTRYPOINT [ "node", "--unhandled-rejections=strict", "-r", "source-map-support/register", "dist/server.js" ]
+ENTRYPOINT [ "node","--unhandled-rejections=strict", "-r", "source-map-support/register", "dist/server.js" ]
