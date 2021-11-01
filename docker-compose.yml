@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  authentication-service:
+    image: authentication-service
+    build:
+      context: .
+      dockerfile: ./services/authentication-service/Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 8080:8080
+    environment:
+      PORT: "8080"
+  parcel-service:
+    image: parcel-service
+    build:
+      context: .
+      dockerfile: ./services/parcel-service/Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 8081:8081
+    environment:
+      PORT: "8081"

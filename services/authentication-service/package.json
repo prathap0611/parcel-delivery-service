@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src --ext .js,ts --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
-    "start": "node -r ts-node/register ./src/server.ts"
+    "start": "node -r ts-node/register ./src/server.ts",
+    "clean": "rm -rf dist/",
+    "build": "npm run clean && tsc --build --verbose",
+    "docker-build": "DOCKER_BUILDKIT=1 docker build -f Dockerfile ../.. -t authentication-service/latest"
   },
   "repository": {
     "type": "git",
@@ -42,6 +45,7 @@
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
+    "source-map-support": "^0.5.20",
     "winston": "^3.3.3"
   }
 }

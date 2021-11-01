@@ -1,3 +1,4 @@
+import 'source-map-support/register';
 import http from 'http';
 import app from './app';
 import logger from './utils/logger';
