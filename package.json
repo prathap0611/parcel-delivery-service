@@ -1,0 +1,31 @@
+{
+  "name": "parcel-delivery-service",
+  "version": "1.0.0",
+  "description": "A monorepo which includes backend services and front end applications for parcel delivery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathap0611/parcel-delivery-service.git"
+  },
+  "keywords": [
+    "parcel",
+    "delivery"
+  ],
+  "author": "prathap0611@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prathap0611/parcel-delivery-service/issues"
+  },
+  "homepage": "https://github.com/prathap0611/parcel-delivery-service#readme",
+  "workspaces": [
+    "services/authentication-service",
+    "services/parcel-service"
+  ],
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}
