@@ -1,0 +1,30 @@
+[{
+    "name": "Alice",
+    "email": "alice@sender.com",
+    "mobile": "123456789",
+    "password": "welcome_alice"
+},
+{
+    "name": "Bob",
+    "email": "bob@sender.com",
+    "mobile": "123456798",
+    "password": "welcome_bob"
+},
+{
+    "name": "James",
+    "email": "james@sender.com",
+    "mobile": "123456879",
+    "password": "welcome_james"
+},
+{
+    "name": "Mathew",
+    "email": "mathew@sender.com",
+    "mobile": "123457689",
+    "password": "welcome_mathew"
+},
+{
+    "name": "Stephen",
+    "email": "stephen@sender.com",
+    "mobile": "123465789",
+    "password": "welcome_stephen"
+}]

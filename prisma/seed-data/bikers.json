@@ -1,0 +1,60 @@
+[{
+    "name": "Julie",
+    "email": "julie@biker.com",
+    "mobile": "123456789",
+    "password": "welcome_julie"
+},
+{
+    "name": "Julian",
+    "email": "julian@biker.com",
+    "mobile": "123456798",
+    "password": "welcome_julian"
+},
+{
+    "name": "Christopher",
+    "email": "christopher@biker.com",
+    "mobile": "123456879",
+    "password": "welcome_christopher"
+},
+{
+    "name": "Alex",
+    "email": "alex@biker.com",
+    "mobile": "123457689",
+    "password": "welcome_alex"
+},
+{
+    "name": "Ana",
+    "email": "ana@biker.com",
+    "mobile": "123465789",
+    "password": "welcome_ana"
+},
+{
+    "name": "Paul",
+    "email": "paul@biker.com",
+    "mobile": "987654321",
+    "password": "welcome_paul"
+},
+{
+    "name": "Christian",
+    "email": "christian@biker.com",
+    "mobile": "897654321",
+    "password": "welcome_christian"
+},
+{
+    "name": "John",
+    "email": "john@biker.com",
+    "mobile": "798654321",
+    "password": "welcome_john"
+},
+{
+    "name": "Hari",
+    "email": "hari@biker.com",
+    "mobile": "698754321",
+    "password": "welcome_hari"
+},
+{
+    "name": "Stephen",
+    "email": "stephen@biker.com",
+    "mobile": "5987654321",
+    "password": "welcome_stephen"
+}]
