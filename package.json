@@ -24,8 +24,8 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "workspaces": [
-    "services/authentication-service",
-    "services/parcel-service"
+    "services/*",
+    "apps/*"
   ],
   "devDependencies": {
     "prisma": "^3.3.0",
