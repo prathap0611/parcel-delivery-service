@@ -5,6 +5,7 @@ import errorhandler from 'errorhandler';
 import { buildRoutes } from './routes';
 import { ValidationError } from 'express-validation';
 import logger from './utils/logger';
+import cors from 'cors';
 import {
     ClientAuthenticationError,
     InvalidDeliveryRequest,
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(compression());
+app.use(cors());
 
 if (process.env.NODE_ENV === 'development') {
     // only use in development

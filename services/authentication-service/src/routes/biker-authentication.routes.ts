@@ -4,7 +4,9 @@ import { validate } from 'express-validation';
 import {
     register,
     login,
+    getProfile,
 } from '../controllers/biker-authentication.controller';
+import { authenticationMiddleware } from '../middlewares/authentication.middleware';
 import { loginValidation, registerValidation } from '../utils/request-schema';
 
 export function buildBikerAuthenticationRoutes(): Router {
@@ -40,6 +42,19 @@ export function buildBikerAuthenticationRoutes(): Router {
                 };
                 const token = await login(loginDetails);
                 res.status(200).json(token);
+            } catch (error) {
+                next(error);
+            }
+        }
+    );
+
+    route.get(
+        '/profile',
+        authenticationMiddleware,
+        async (req: Request, res: Response, next: NextFunction) => {
+            try {
+                const profile = await getProfile(Number(res.locals.user.id));
+                res.status(200).json(profile);
             } catch (error) {
                 next(error);
             }

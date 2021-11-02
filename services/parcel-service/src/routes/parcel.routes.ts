@@ -27,7 +27,7 @@ export function buildParcelRoutes(): Router {
         async (req: Request, res: Response, next: NextFunction) => {
             try {
                 const parcelId = await createParcel({
-                    senderId: res.locals.user.id,
+                    senderId: Number(res.locals.user.id),
                     pickupAddress: req.body.pickupAddress,
                     deliveryAddress: req.body.deliveryAddress,
                 });
